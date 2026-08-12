@@ -16,11 +16,11 @@ GITHUB_REPO="https://github.com/mohamedmabrouk-666/Cloud-Document-Manager"
 
 # Install required packages
 sudo apt-get update -y
-sudo apt-get install -y python3 python3-venv python3-pip  git
+sudo apt-get install -y python3 python3-venv python3-pip 
 sudo apt install -y mariadb-client
 
 # Clone project
-sudo git clone --depth 1 --branch main "$GITHUB_REPO" "$REPO_DIR"
+# sudo git clone --depth 1 --branch main "$GITHUB_REPO" "$REPO_DIR"
 
 # Create virtual environment
 sudo python3 -m venv "$REPO_DIR/venv"
