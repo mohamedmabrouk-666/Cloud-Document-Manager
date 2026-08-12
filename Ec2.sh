@@ -18,6 +18,8 @@ GITHUB_REPO="https://github.com/mohamedmabrouk-666/Cloud-Document-Manager"
 sudo apt-get update -y
 sudo apt-get install -y python3 python3-venv python3-pip 
 sudo apt install -y mariadb-client
+# to open port 80 in our EC2s to health check
+sudo apt install nginx -y
 
 # Clone project
 # sudo git clone --depth 1 --branch main "$GITHUB_REPO" "$REPO_DIR"
