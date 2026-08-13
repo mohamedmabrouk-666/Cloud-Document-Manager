@@ -8,6 +8,8 @@ The main goal of this project is to practice deploying a real application on AWS
 
 The application follows a 3-tier architecture:
 
+![AWS Architecture](architecture.png)
+
 ```text
 User
   |
