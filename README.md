@@ -41,16 +41,16 @@ AWS_REGION
 
 ## Steps to create this project by yourself
 
-#### 1. AWS Region
+### 1. AWS Region
 The project was deployed in:
 ```
 us-east-1
 ```
-2.Create the S3 Bucket and called 
+### 2.Create the S3 Bucket and called 
 ```
 document-manager-602
 ```
-3.Create Amazon RDS Database with these configuration or configuration related you but note use new configuration in our script after you download it
+### 3.Create Amazon RDS Database with these configuration or configuration related you but note use new configuration in our script after you download it
 ```
 Engine: MariaDB
 Database name: document_manager
@@ -63,7 +63,7 @@ database-1.xxxxxxxxxxxx.us-east-1.rds.amazonaws.com
 ```
 This endpoint will be used in the EC2 configuration.
 
-4.Configure RDS Security Group
+### 4.Configure RDS Security Group
 Create or use a Security Group for RDS.
 
 Allow:
@@ -72,9 +72,9 @@ Type: MySQL/Aurora
 Port: 3306
 Source: EC2 Security Group
 ```
-5.Create IAM Role for EC2 to access S3
+### 5.Create IAM Role for EC2 to access S3
 
-6.Create a Security Group for the template instances.
+### 6.Create a Security Group for the template instances.
 
 Allow the required application traffic.
 ```
@@ -91,7 +91,7 @@ Port 22
 Source: Your IP
 ```
 
-7.Prepare the Template User Data. from Ec2 file in our Repo
+### 7.Prepare the Template User Data. from Ec2 file in our Repo
 ```
 #!/bin/bash
 
@@ -107,7 +107,7 @@ sudo git clone --depth 1 --branch main "$GITHUB_REPO" "$REPO_DIR"
 
 bash "$REPO_DIR/Ec2.sh"
 ```
-8.  Configure Ec2.sh with your Data
+### 8.  Configure Ec2.sh with your Data
    
  **Update the values before launching the instances**
 ```
@@ -124,7 +124,7 @@ DB_USER="admin"
 DB_PASSWORD="admin1234"
 ```
 
-9.  Create Target Group
+### 9.  Create Target Group
  Configure:
 ```
 Protocol:
@@ -133,15 +133,15 @@ HTTP
 Port:
 5000
 ```
-10.  Create Application Load Balancer
+### 10.  Create Application Load Balancer
 
-11.  Create Auto Scaling Group
+### 11.  Create Auto Scaling Group
 Select the previously created:
 ```
 Launch Template
 Target Group
 ```
-12.  Test the Application
+### 12.  Test the Application
 
 copy the DNS Of Application Load Balancer like this
 ```
@@ -151,15 +151,15 @@ and Open:
 ```
 http://my-load-balancer-xxxxxxxx.us-east-1.elb.amazonaws.com
 ```
- 13.  create S3 Event Notifications
+ ### 13.  create S3 Event Notifications
 
 The project uses Amazon EventBridge to detect deleted S3 objects.
 
-14.  Create SNS Topic
+### 14.  Create SNS Topic
 
-15.  Create EventBridge Rule
+### 15.  Create EventBridge Rule
 
-16.  Test S3 Delete Notification
+### 16.  Test S3 Delete Notification
 
 
 ## What you Practiced in this project 
