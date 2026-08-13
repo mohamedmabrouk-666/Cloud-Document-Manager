@@ -64,7 +64,7 @@ database password: admin1234
 database-1.xxxxxxxxxxxx.us-east-1.rds.amazonaws.com
 ```
 This endpoint will be used in the EC2 configuration.
-
+---
 ### 4.Configure RDS Security Group
 Create or use a Security Group for RDS.
 
@@ -74,8 +74,9 @@ Type: MySQL/Aurora
 Port: 3306
 Source: EC2 Security Group
 ```
+---
 ### 5.Create IAM Role for EC2 to access S3
-
+---
 ### 6.Create a Security Group for the template instances.
 
 Allow the required application traffic.
@@ -92,7 +93,7 @@ TCP
 Port 22
 Source: Your IP
 ```
-
+---
 ### 7.Prepare the Template User Data. from Ec2 file in our Repo
 ```
 #!/bin/bash
@@ -109,6 +110,7 @@ sudo git clone --depth 1 --branch main "$GITHUB_REPO" "$REPO_DIR"
 
 bash "$REPO_DIR/Ec2.sh"
 ```
+---
 ### 8.  Configure Ec2.sh with your Data
    
  **Update the values before launching the instances**
@@ -125,7 +127,7 @@ DB_USER="admin"
 
 DB_PASSWORD="admin1234"
 ```
-
+---
 ### 9.  Create Target Group
  Configure:
 ```
@@ -135,14 +137,16 @@ HTTP
 Port:
 5000
 ```
+---
 ### 10.  Create Application Load Balancer
-
+---
 ### 11.  Create Auto Scaling Group
 Select the previously created:
 ```
 Launch Template
 Target Group
 ```
+---
 ### 12.  Test the Application
 
 copy the DNS Of Application Load Balancer like this
@@ -153,17 +157,18 @@ and Open:
 ```
 http://my-load-balancer-xxxxxxxx.us-east-1.elb.amazonaws.com
 ```
+---
  ### 13.  create S3 Event Notifications
 
 The project uses Amazon EventBridge to detect deleted S3 objects.
-
+---
 ### 14.  Create SNS Topic
-
+---
 ### 15.  Create EventBridge Rule
-
+---
 ### 16.  Test S3 Delete Notification
 
-
+---
 ## What you Practiced in this project 
 
 Through this project, You practiced:
