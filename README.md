@@ -41,7 +41,7 @@ AWS_REGION
 
 ## Steps to create this project by yourself
 
-### 1. AWS Region
+#### 1. AWS Region
 The project was deployed in:
 ```
 us-east-1
