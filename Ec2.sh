@@ -6,7 +6,7 @@ REPO_DIR="/opt/job-app-repo"
 AWS_REGION="us-east-1"
 S3_BUCKET="document-manager-602"
 
-DB_HOST="database-1.caxcaqcocc4x.us-east-1.rds.amazonaws.com"    
+DB_HOST="database-1.caxcaqcocc4x.us-east-1.rds.amazonaws.com"  
 DB_NAME="document_manager"
 DB_USER="admin"
 DB_PASSWORD="admin1234"
