@@ -107,8 +107,9 @@ sudo git clone --depth 1 --branch main "$GITHUB_REPO" "$REPO_DIR"
 
 bash "$REPO_DIR/Ec2.sh"
 ```
-8. Configure Ec2.sh with you Data
-   **Update the values before launching the instances**
+8.  Configure Ec2.sh with your Data
+   
+ **Update the values before launching the instances**
 ```
 AWS_REGION="us-east-1"
 
@@ -123,7 +124,7 @@ DB_USER="admin"
 DB_PASSWORD="admin1234"
 ```
 
-9. Create Target Group
+9.  Create Target Group
  Configure:
 ```
 Protocol:
@@ -132,15 +133,15 @@ HTTP
 Port:
 5000
 ```
-10.Create Application Load Balancer
+10.  Create Application Load Balancer
 
-11.Create Auto Scaling Group
+11.  Create Auto Scaling Group
 Select the previously created:
 ```
 Launch Template
 Target Group
 ```
-12.Test the Application
+12.  Test the Application
 
 copy the DNS Of Application Load Balancer like this
 ```
@@ -150,20 +151,20 @@ and Open:
 ```
 http://my-load-balancer-xxxxxxxx.us-east-1.elb.amazonaws.com
 ```
- 13.create S3 Event Notifications
+ 13.  create S3 Event Notifications
 
 The project uses Amazon EventBridge to detect deleted S3 objects.
 
-14.Create SNS Topic
+14.  Create SNS Topic
 
-15.Create EventBridge Rule
+15.  Create EventBridge Rule
 
-16.Test S3 Delete Notification
+16.  Test S3 Delete Notification
 
 
-## What I Practiced
+## What you Practiced in this project 
 
-Through this project, I practiced:
+Through this project, You practiced:
 
 * Building a 3-tier application architecture
 * AWS VPC networking
@@ -175,8 +176,5 @@ Through this project, I practiced:
 * Amazon S3
 * IAM roles and permissions
 * Security Groups
-* CloudWatch monitoring
-
-## Notes
-
-This project is mainly focused on the cloud infrastructure and AWS architecture. The application itself is intentionally kept simple so that the main focus remains on deploying and operating the application in AWS.
+* EventBridge
+* SNS email notifications
