@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 REPO_DIR="/opt/job-app-repo"
