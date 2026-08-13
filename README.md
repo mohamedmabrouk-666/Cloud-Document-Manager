@@ -46,10 +46,12 @@ The project was deployed in:
 ```
 us-east-1
 ```
+---
 ### 2.Create the S3 Bucket and called 
 ```
 document-manager-602
 ```
+---
 ### 3.Create Amazon RDS Database with these configuration or configuration related you but note use new configuration in our script after you download it
 ```
 Engine: MariaDB
